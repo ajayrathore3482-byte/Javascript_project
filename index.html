@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Student Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <h1>Smart Student Dashboard</h1>
+        <p>Learn JavaScript by building a real mini project</p>
+      </div>
+      <button id="themeToggle" class="theme-btn">🌙 Toggle Theme</button>
+    </header>
+
+    <section class="stats-grid">
+      <div class="card stat-card">
+        <h3>Total Tasks</h3>
+        <p id="totalTasks">0</p>
+      </div>
+      <div class="card stat-card">
+        <h3>Completed</h3>
+        <p id="completedTasks">0</p>
+      </div>
+      <div class="card stat-card">
+        <h3>Pending</h3>
+        <p id="pendingTasks">0</p>
+      </div>
+      <div class="card stat-card">
+        <h3>Notes</h3>
+        <p id="totalNotes">0</p>
+      </div>
+    </section>
+
+    <main class="dashboard-grid">
+      <!-- Profile -->
+      <section class="card">
+        <h2>1. Profile Section</h2>
+        <form id="profileForm" class="form-grid">
+          <input type="text" id="name" placeholder="Full Name" />
+          <input type="email" id="email" placeholder="Email" />
+          <input type="text" id="course" placeholder="Course / Class" />
+          <input type="text" id="goal" placeholder="Daily Goal" />
+          <button type="submit">Save Profile</button>
+        </form>
+        <div id="profilePreview" class="profile-preview"></div>
+      </section>
+
+      <!-- Task Manager -->
+      <section class="card">
+        <h2>2. Task Manager</h2>
+        <form id="taskForm" class="form-row">
+          <input type="text" id="taskInput" placeholder="Enter a task..." />
+          <button type="submit">Add Task</button>
+        </form>
+
+        <div class="toolbar">
+          <input type="text" id="taskSearch" placeholder="Search task..." />
+          <select id="taskFilter">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="pending">Pending</option>
+          </select>
+        </div>
+
+        <ul id="taskList" class="list"></ul>
+      </section>
+
+      <!-- Notes -->
+      <section class="card">
+        <h2>3. Notes Section</h2>
+        <form id="noteForm" class="form-grid">
+          <input type="text" id="noteTitle" placeholder="Note title" />
+          <textarea id="noteContent" placeholder="Write your note..."></textarea>
+          <button type="submit">Add Note</button>
+        </form>
+
+        <input type="text" id="noteSearch" placeholder="Search notes..." class="full-width-search" />
+        <div id="notesList" class="notes-grid"></div>
+      </section>
+
+      <!-- Quiz -->
+      <section class="card">
+        <h2>4. Quiz Section</h2>
+        <div id="quizBox">
+          <p id="quizQuestion">Question will appear here</p>
+          <div id="quizOptions" class="quiz-options"></div>
+          <button id="nextQuestionBtn">Next Question</button>
+          <p id="quizScore">Score: 0</p>
+        </div>
+      </section>
+
+      <!-- Weather -->
+      <section class="card">
+        <h2>5. Weather Section</h2>
+        <div class="form-row">
+          <input type="text" id="cityInput" placeholder="Enter city name" />
+          <button id="getWeatherBtn">Get Weather</button>
+        </div>
+        <div id="weatherResult" class="weather-box"></div>
+      </section>
+
+      <!-- Pomodoro -->
+      <section class="card">
+        <h2>6. Pomodoro Timer</h2>
+        <div class="pomodoro-modes">
+          <button class="mode-btn" data-mode="study">Study</button>
+          <button class="mode-btn" data-mode="short">Short Break</button>
+          <button class="mode-btn" data-mode="long">Long Break</button>
+        </div>
+        <h3 id="timerDisplay">25:00</h3>
+        <div class="pomodoro-actions">
+          <button id="startTimer">Start</button>
+          <button id="pauseTimer">Pause</button>
+          <button id="resetTimer">Reset</button>
+        </div>
+      </section>
+
+      <!-- JS Topics -->
+      <section class="card">
+        <h2>7. JavaScript Topics Covered</h2>
+        <div id="topicsCovered" class="topics-box"></div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
